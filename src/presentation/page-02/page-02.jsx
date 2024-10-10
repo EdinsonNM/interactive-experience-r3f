@@ -1,8 +1,8 @@
 import { Canvas } from "@react-three/fiber";
 import Scene from "./scene";
 import World from "./world";
+import useLoadPage from "../../hooks/use-load-page";
 import { useState } from "react";
-import Steps from "../../components/steps/steps";
 const worlds = [
   "https://sketchfab.com/models/1cba7c412a9e4eb9957b298d68649a90/embed",
   "https://sketchfab.com/models/946e7d496abd400fa028a719f8df3b04/embed",
@@ -12,7 +12,7 @@ const worlds = [
 ];
 export default function Page02() {
   const [world, setWorld] = useState(-1);
-
+  useLoadPage(2);
   return (
     <>
       <Canvas
@@ -70,8 +70,7 @@ export default function Page02() {
           </div>
           <World url={worlds[world]} />{" "}
         </div>
-      )}{" "}
-      <Steps page={2} totalPages={10} />
+      )}
     </>
   );
 }

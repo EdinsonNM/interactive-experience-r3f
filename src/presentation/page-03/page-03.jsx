@@ -1,9 +1,8 @@
 import { Canvas } from "@react-three/fiber";
 import Scene from "./scene";
-import { useNavigate } from "react-router-dom";
-import Steps from "../../components/steps/steps";
+import useLoadPage from "../../hooks/use-load-page";
 export default function Page03() {
-  const navigate = useNavigate();
+  useLoadPage(3);
   return (
     <>
       <Canvas
@@ -25,7 +24,6 @@ export default function Page03() {
           </h2>
         </div>
       </div>
-      <Steps page={3} totalPages={10} />
     </>
   );
 }

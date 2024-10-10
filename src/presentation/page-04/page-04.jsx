@@ -1,7 +1,8 @@
 import { Canvas } from "@react-three/fiber";
 import Scene from "./scene";
-import Steps from "../../components/steps/steps";
+import useLoadPage from "../../hooks/use-load-page";
 export default function Page04() {
+  useLoadPage(4);
   return (
     <>
       <Canvas
@@ -23,7 +24,6 @@ export default function Page04() {
           </h2>
         </div>
       </div>
-      <Steps page={4} totalPages={10} />
     </>
   );
 }

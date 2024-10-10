@@ -34,9 +34,6 @@ export default function Scene() {
       <CameraControls ref={cameraControls} />
       <Developer />
       <Environment preset="city" />
-      <Html className="w-full h-full pointer-events-auto">
-        <button onClick={changeScene}>Hola</button>
-      </Html>
     </>
   );
 }

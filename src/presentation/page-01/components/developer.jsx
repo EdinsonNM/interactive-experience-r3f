@@ -1,23 +1,29 @@
 import { useAnimations, useCursor, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
+import { AnimationMixer } from "three";
 
 export default function Developer() {
   const { scene, animations } = useGLTF("/models/developer.gltf");
   const developer = useRef();
-  const { actions, mixer } = useAnimations(animations, developer);
+  const { actions } = useAnimations(animations, developer);
+  useCursor(true);
+  const mixer = useRef();
+  if (!mixer.current) {
+    mixer.current = new AnimationMixer(scene);
+    animations.forEach((clip) => {
+      mixer.current.clipAction(clip).play();
+    });
+  }
 
-  useEffect(() => {
-    if (actions) {
-      actions[Object.keys(actions)[0]].play(); // Reproduce la primera animación
-    }
-  }, [actions]);
-
-  useFrame((_, delta) => {
-    if (mixer) mixer.update(delta); // Actualiza el mixer en cada frame
-  });
   return (
-    <group ref={developer} onClick={() => actions["parpadear"].play()}>
+    <group
+      onClick={() => actions["parpadear"].play()}
+      onDoubleClick={() => actions["parpadear"].stop()}
+      onPointerOver={() => actions["parpadear"].play()}
+      onPointerLeave={() => actions["parpadear"].stop()}
+      ref={developer}
+    >
       <primitive object={scene} />;
     </group>
   );
