@@ -9,6 +9,7 @@ import Page06 from "./page-06/page-06";
 import Page07 from "./page-07/page-07";
 import Page08 from "./page-08/page-08";
 import Page09 from "./page-09/page-09";
+import Page10 from "./page-10/page-10";
 
 export const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
       {
         path: "/page-9",
         element: <Page09 />,
+      },
+      {
+        path: "/page-10",
+        element: <Page10 />,
       },
     ],
   },
