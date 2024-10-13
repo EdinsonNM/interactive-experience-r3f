@@ -91,6 +91,41 @@ export const router = createBrowserRouter([
           return { Component: Default };
         },
       },
+      {
+        path: "/page-13",
+        lazy: async () => {
+          const { default: Default } = await import("./page-13/index");
+          return { Component: Default };
+        },
+      },
+      {
+        path: "/page-14",
+        lazy: async () => {
+          const { default: Default } = await import("./page-14/index");
+          return { Component: Default };
+        },
+      },
+      {
+        path: "/page-15",
+        lazy: async () => {
+          const { default: Default } = await import("./page-15/index");
+          return { Component: Default };
+        },
+      },
+      {
+        path: "/page-16",
+        lazy: async () => {
+          const { default: Default } = await import("./page-16/index");
+          return { Component: Default };
+        },
+      },
+      {
+        path: "/page-17",
+        lazy: async () => {
+          const { default: Default } = await import("./page-17/index");
+          return { Component: Default };
+        },
+      },
     ],
   },
 ]);
