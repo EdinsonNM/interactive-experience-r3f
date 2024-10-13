@@ -4,7 +4,7 @@ export default function Steps({ page, totalPages }) {
   const navigate = useNavigate();
 
   return (
-    <ul className="absolute bottom-10 steps">
+    <ul className="fixed bottom-10 steps">
       {Array.from({ length: totalPages }, (_, index) => (
         <li
           role="button"

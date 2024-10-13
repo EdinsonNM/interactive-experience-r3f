@@ -7,11 +7,13 @@ export default function LayoutProvider({ children }) {
   const onNextPage = () => setPage(page + 1);
   const onPreviousPage = () => setPage(page - 1);
   return (
-    <LayoutContext.Provider
-      value={{ page, onNextPage, onPreviousPage, setPage }}
-    >
-      {children}
-      <Steps page={page} totalPages={20} />
-    </LayoutContext.Provider>
+    <div className="relative w-screen h-screen">
+      <LayoutContext.Provider
+        value={{ page, onNextPage, onPreviousPage, setPage }}
+      >
+        {children}
+        <Steps page={page} totalPages={20} />
+      </LayoutContext.Provider>
+    </div>
   );
 }
