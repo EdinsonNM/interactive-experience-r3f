@@ -11,7 +11,7 @@ export default function LayoutProvider({ children }) {
       value={{ page, onNextPage, onPreviousPage, setPage }}
     >
       {children}
-      <Steps page={page} totalPages={10} />
+      <Steps page={page} totalPages={20} />
     </LayoutContext.Provider>
   );
 }

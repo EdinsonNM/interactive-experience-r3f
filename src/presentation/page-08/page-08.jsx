@@ -13,8 +13,9 @@ export default function Page08() {
           Metaverso
         </h1>
         <h2 className="text-2xl font-bold text-center text-gray-100 mx-auto max-w-4xl">
-          “El uso de 3D en la educación está creciendo. Puede usarse para
-          visualizar conceptos complejos y hacerlos más fáciles de entender. ”
+          “El metaverso es un espacio virtual compartido donde las personas
+          pueden interactuar entre sí y con objetos digitales. Es un mundo
+          virtual donde las personas pueden vivir, trabajar y jugar. ”
         </h2>
       </div>
     </div>

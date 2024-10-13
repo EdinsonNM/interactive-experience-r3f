@@ -1,9 +1,8 @@
 import { useAnimations, useCursor, useGLTF } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { AnimationMixer } from "three";
 
-export default function Developer() {
+export default function Developer(props) {
   const { scene, animations } = useGLTF("/models/developer.gltf");
   const developer = useRef();
   const { actions } = useAnimations(animations, developer);
@@ -23,6 +22,7 @@ export default function Developer() {
       onPointerOver={() => actions["parpadear"].play()}
       onPointerLeave={() => actions["parpadear"].stop()}
       ref={developer}
+      {...props}
     >
       <primitive object={scene} />;
     </group>

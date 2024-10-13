@@ -15,13 +15,16 @@ export default function Page01() {
         <Scene />
       </Canvas>
       <div className="absolute w-full h-full text-cyan-700 flex flex-col justify-center items-start pointer-events-none">
-        <div>
+        <div className="mx-20 flex flex-col gap-4">
           <h1 className="text-6xl font-bold  whitespace-pre-wrap px-10 max-w-4xl text-center">
             Creando experiencias interactivas con React y Three JS
           </h1>
           <h2 className="text-2xl font-bold text-center text-gray-500">
             “Haciendo programación divertida”
           </h2>
+          <div className="kbd kbd-l flex-grow mx-auto">
+            npm install three @types/three @react-three/fiber
+          </div>
         </div>
       </div>
     </>
