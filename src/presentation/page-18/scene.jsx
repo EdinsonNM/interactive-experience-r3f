@@ -1,4 +1,10 @@
-import { Environment, Html, OrbitControls } from "@react-three/drei";
+import {
+  Environment,
+  Gltf,
+  Html,
+  OrbitControls,
+  useGLTF,
+} from "@react-three/drei";
 import { useTexture } from "@react-three/drei";
 import { useControls } from "leva";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
@@ -8,7 +14,7 @@ import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function Scene() {
   const { geometry, wireframe } = useControls({
-    wireframe: true,
+    wireframe: false,
     geometry: {
       value: "sphere",
       options: [
@@ -22,6 +28,7 @@ export default function Scene() {
         "icosahedron",
         "lathe",
         "octahedron",
+        "suzi",
       ],
     },
   });
@@ -38,11 +45,19 @@ export default function Scene() {
     if (geometry === "icosahedron") return "<icosahedronGeometry />";
     if (geometry === "lathe") return "<latheGeometry />";
     if (geometry === "octahedron") return "<octahedronGeometry />";
+    if (geometry === "suzi") return "<mesh geometry={nodes.Suzanne.geometry}/>";
   };
+  const { scene, nodes } = useGLTF("/models/page-18/model.gltf");
+  console.log(nodes);
   return (
     <>
       <directionalLight position={[0, 4, 5]} intensity={3} />
       <group>
+        {geometry === "suzi" && (
+          <mesh geometry={nodes.Suzanne.geometry}>
+            <meshStandardMaterial wireframe={wireframe} map={mapTexture} />
+          </mesh>
+        )}
         <mesh position={[0, 0, 0]}>
           {geometry === "sphere" && <sphereGeometry />}
           {geometry === "box" && <boxGeometry />}
@@ -54,11 +69,14 @@ export default function Scene() {
           {geometry === "icosahedron" && <icosahedronGeometry />}
           {geometry === "lathe" && <latheGeometry />}
           {geometry === "octahedron" && <octahedronGeometry />}
-          <meshPhysicalMaterial wireframe={wireframe} map={mapTexture} />
+          <meshStandardMaterial wireframe={wireframe} map={mapTexture} />
         </mesh>
         <Html center position={[0, 2, 0]}>
           <SyntaxHighlighter language="html" style={atomDark}>
-            {`${getGeometryCode(geometry)}`}
+            {`<mesh>
+  ${getGeometryCode(geometry)}
+  <meshPhysicalMaterial />
+</mesh>`}
           </SyntaxHighlighter>
         </Html>
       </group>

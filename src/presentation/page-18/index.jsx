@@ -4,25 +4,27 @@ import Scene from "./scene";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-export default function Page16() {
-  useLoadPage(16);
+export default function Page18() {
+  useLoadPage(18);
   return (
     <div className="flex flex-col gap-8 items-center justify-center h-screen w-screen overflow-hidden bg-gradient-to-t from-purple-950 to-cyan-900">
       <Canvas
         className="w-full h-full"
         shadows
-        camera={{ fov: 75, position: [0, 3, 5] }}
+        camera={{ fov: 75, position: [0, 0, 5] }}
       >
         <Scene />
       </Canvas>
       <div className="absolute w-full h-full text-white flex flex-col justify-start  items-center pointer-events-none gap-8">
         <h1 className="md:text-6xl text-4xl font-bold  whitespace-pre-wrap px-10 max-w-4xl text-center text-cyan-700 mt-10">
-          Geometría
+          Mesh
         </h1>
         <h2 className="md:text-2xl text-lg font-bold text-center text-gray-100 mx-auto max-w-4xl">
-          “La geometría es el esqueleto de tus objetos 3D. Define la forma y
-          estructura del objeto mediante vértices, aristas y caras.”
-        </h2>
+          “Un mesh (malla) es la combinación de geometría y material. Es el
+          objeto 3D completo que ves en la escena. La geometría proporciona la
+          forma y el material le da la apariencia. El mesh es lo que finalmente
+          interactúa con el mundo 3D. ”
+        </h2>{" "}
       </div>
     </div>
   );

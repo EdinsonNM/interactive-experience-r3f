@@ -133,6 +133,27 @@ export const router = createBrowserRouter([
         },
       },
       {
+        path: "/page-18",
+        lazy: async () => {
+          const { default: Default } = await import("./page-18/index");
+          return { Component: Default };
+        },
+      },
+      {
+        path: "/page-19",
+        lazy: async () => {
+          const { default: Default } = await import("./page-19/index");
+          return { Component: Default };
+        },
+      },
+      {
+        path: "/page-20",
+        lazy: async () => {
+          const { default: Default } = await import("./page-20/index");
+          return { Component: Default };
+        },
+      },
+      {
         path: "*",
         element: <Navigate to="/" />,
       },

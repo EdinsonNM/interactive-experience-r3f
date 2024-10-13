@@ -19,7 +19,8 @@ export default function Page14() {
           Canvas
         </h1>
         <h2 className="md:text-2xl text-lg font-bold text-center text-gray-100 mx-auto max-w-4xl">
-          “Canvas es el componente principal de React Three Fiber.”
+          "Es un elemento HTML (&lt;canvas/&gt;) que actúa como un área de
+          dibujo en la que podemos renderizar gráficos usando JavaScript ”
         </h2>
         <div className="kbd kbd-lg">
           <SyntaxHighlighter language="javascript" style={atomDark}>
