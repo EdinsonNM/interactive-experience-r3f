@@ -154,6 +154,41 @@ export const router = createBrowserRouter([
         },
       },
       {
+        path: "/page-21",
+        lazy: async () => {
+          const { default: Default } = await import("./page-21/index");
+          return { Component: Default };
+        },
+      },
+      {
+        path: "/page-22",
+        lazy: async () => {
+          const { default: Default } = await import("./page-22/index");
+          return { Component: Default };
+        },
+      },
+      {
+        path: "/page-23",
+        lazy: async () => {
+          const { default: Default } = await import("./page-23/index");
+          return { Component: Default };
+        },
+      },
+      {
+        path: "/page-24",
+        lazy: async () => {
+          const { default: Default } = await import("./page-24/index");
+          return { Component: Default };
+        },
+      },
+      {
+        path: "/page-25",
+        lazy: async () => {
+          const { default: Default } = await import("./page-25/index");
+          return { Component: Default };
+        },
+      },
+      {
         path: "*",
         element: <Navigate to="/" />,
       },
