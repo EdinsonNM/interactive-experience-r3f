@@ -1,15 +1,14 @@
-import { CameraControls, Gltf } from "@react-three/drei";
+import { CameraControls, Gltf, useGLTF } from "@react-three/drei";
 import Monitor1 from "./components/monitor1";
 import Monitor2 from "./components/monitor2";
 import Proyector from "./components/proyector";
 import Chair from "./components/chair";
 import Dog from "./components/dog";
-import { useEffect, useRef } from "react";
-import useCameraControlHelper from "../../hooks/use-cameracontrol-helper";
+import { Suspense, useEffect, useRef } from "react";
 
 export default function Scene() {
   const cameraControls = useRef(null);
-  //useCameraControlHelper(cameraControls);
+  const { scene } = useGLTF("/models/page-03/hyo-room.gltf", "draco/gltf/");
   useEffect(() => {
     if (!cameraControls.current) return;
     cameraControls.current.setLookAt(
@@ -35,7 +34,9 @@ export default function Scene() {
       <ambientLight position={[0, 10, 10]} color={"#f2f2f2"} />
       <pointLight position={[0, 10, 5]} color={"white"} />
       <Proyector />
-      <Gltf src="/models/page-03/hyo-room.gltf" />
+      <Suspense fallback={null}>
+        <primitive object={scene} />
+      </Suspense>
       <Monitor1 />
       <Monitor2 />
       <Chair />
@@ -43,3 +44,4 @@ export default function Scene() {
     </>
   );
 }
+useGLTF.preload("/models/page-03/hyo-room.gltf", "draco/gltf/");

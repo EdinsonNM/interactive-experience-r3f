@@ -3,7 +3,10 @@ import { useRef } from "react";
 import { AnimationMixer } from "three";
 
 export default function Developer(props) {
-  const { scene, animations } = useGLTF("/models/developer.gltf");
+  const { scene, animations } = useGLTF(
+    "/models/developer.gltf",
+    "draco/gltf/"
+  );
   const developer = useRef();
   const { actions } = useAnimations(animations, developer);
   useCursor(true);
@@ -28,4 +31,4 @@ export default function Developer(props) {
     </group>
   );
 }
-useGLTF.preload("/models/developer.gltf");
+useGLTF.preload("/models/developer.gltf", "draco/gltf/");

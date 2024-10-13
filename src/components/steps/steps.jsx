@@ -8,18 +8,20 @@ export default function Steps({ page, totalPages }) {
   const onNextPage = () => navigate(`/page-${page + 1}`);
   return (
     <>
-      <ul className="fixed bottom-10 steps hidden xl:flex">
-        {Array.from({ length: totalPages }, (_, index) => (
-          <li
-            role="button"
-            key={index}
-            className={`step ${
-              page > index ? "step-primary" : ""
-            } cursor-pointer`}
-            onClick={() => navigate(`/page-${index + 1}`)}
-          ></li>
-        ))}
-      </ul>
+      {page > 0 && (
+        <ul className="fixed bottom-10 steps hidden xl:flex">
+          {Array.from({ length: totalPages }, (_, index) => (
+            <li
+              role="button"
+              key={index}
+              className={`step ${
+                page > index ? "step-primary" : ""
+              } cursor-pointer`}
+              onClick={() => navigate(`/page-${index + 1}`)}
+            ></li>
+          ))}
+        </ul>
+      )}
       <div className="flex justify-between fixed bottom-10 w-full px-4 xl:hidden">
         <button
           className="btn-circle btn btn-md btn-warning"

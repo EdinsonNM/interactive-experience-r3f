@@ -26,17 +26,11 @@ useTexture.preload("/models/page-00/bbva-band.png");
 
 export default function App() {
   const { onNextPage } = useContext(LayoutContext);
-  const { debug } = useControls({ debug: false });
   return (
     <div className="h-screen w-screen bg-gradient-to-b from-blue-950 to-blue-900">
       <Canvas camera={{ position: [0, 0, 13], fov: 25 }}>
         <ambientLight intensity={Math.PI} />
-        <Physics
-          debug={debug}
-          interpolate
-          gravity={[0, -40, 0]}
-          timeStep={1 / 60}
-        >
+        <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
           <Band />
         </Physics>
         <Environment blur={0.75}>
