@@ -66,7 +66,10 @@ export default function App() {
         </Environment>
       </Canvas>
       <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-blue-600 to-transparent flex justify-center items-center">
-        <Link to="/page-1" className="btn btn-lg btn-warning">
+        <Link
+          to="/page-1"
+          className="btn btn-lg font-bold text-white bg-orange-500 hover:bg-orange-700"
+        >
           Empezar
         </Link>
       </div>
