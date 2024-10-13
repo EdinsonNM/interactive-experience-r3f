@@ -9,7 +9,7 @@ import useCameraControlHelper from "../../hooks/use-cameracontrol-helper";
 
 export default function Scene() {
   const cameraControls = useRef(null);
-  useCameraControlHelper(cameraControls);
+  //useCameraControlHelper(cameraControls);
   useEffect(() => {
     if (!cameraControls.current) return;
     cameraControls.current.setLookAt(

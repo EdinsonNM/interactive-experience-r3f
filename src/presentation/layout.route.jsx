@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import Layout from "./layout";
 
 export const router = createBrowserRouter([
@@ -8,6 +8,12 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
+        lazy: async () => {
+          const { default: Default } = await import("./page-00/index");
+          return { Component: Default };
+        },
+      },
+      {
         path: "/page-1",
         lazy: async () => {
           const { default: Default } = await import("./page-01/page-01");
@@ -125,6 +131,10 @@ export const router = createBrowserRouter([
           const { default: Default } = await import("./page-17/index");
           return { Component: Default };
         },
+      },
+      {
+        path: "*",
+        element: <Navigate to="/" />,
       },
     ],
   },
