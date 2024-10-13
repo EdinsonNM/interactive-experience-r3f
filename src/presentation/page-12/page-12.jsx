@@ -12,7 +12,7 @@ export default function Page11() {
       </Canvas>
       <div className="absolute w-full h-full text-white flex flex-col justify-center  items-start pointer-events-none gap-8">
         <div className="mx-20 flex flex-col gap-4">
-          <h1 className="text-6xl font-bold  whitespace-pre-wrap px-10 max-w-4xl text-center text-white">
+          <h1 className="md:text-6xl text-4xl font-bold  whitespace-pre-wrap px-10 max-w-4xl text-center text-white">
             Qué es React Three Fiber?
           </h1>
         </div>

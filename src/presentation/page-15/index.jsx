@@ -16,14 +16,14 @@ export default function Page15() {
         <Scene />
       </Canvas>
       <div className="absolute w-full h-full text-white flex flex-col justify-start  items-center pointer-events-none gap-8">
-        <h1 className="text-6xl font-bold  whitespace-pre-wrap px-10 max-w-4xl text-center text-cyan-700 mt-10">
+        <h1 className="md:text-6xl text-4xl font-bold  whitespace-pre-wrap px-10 max-w-4xl text-center text-cyan-700 mt-10">
           Scene
         </h1>
-        <h2 className="text-2xl font-bold text-center text-gray-100 mx-auto max-w-4xl">
+        <h2 className="md:text-2xl text-lg font-bold text-center text-gray-100 mx-auto max-w-4xl">
           “Scene en Three.js es donde colocamos y organizamos todos nuestros
           objetos 3D.”
         </h2>
-        <div className="kbd kbd-lg">
+        <div className="kbd md:kbd-lg kbd-xs">
           <SyntaxHighlighter language="javascript" style={atomDark}>
             {`<Canvas>
   <spotLight intensity={1.5} color="yellow" position={[-1, 1, 0]} />

@@ -1,8 +1,10 @@
 import { useVideoTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-
-export default function Proyector() {
+import * as THREE from "three";
+export default function Proyector(props) {
+  const { position = [-0.925, 1.36, 0], rotation = [0, Math.PI / 2, 0] } =
+    props;
   const videoTexture = useVideoTexture("/videos/video1.mov");
   const refLight = useRef();
   const targetRef = useRef();
@@ -13,12 +15,13 @@ export default function Proyector() {
     <>
       <mesh
         ref={targetRef}
-        rotation={[0, Math.PI / 2, 0]}
-        position={[-0.925, 1.36, 0]}
+        rotation={rotation}
+        position={position}
         scale={[0.12, 0.12, 0.12]}
+        {...props}
       >
         <planeGeometry args={[16, 9, 1]} />
-        <meshBasicMaterial map={videoTexture} />
+        <meshBasicMaterial map={videoTexture} side={THREE.DoubleSide} />
       </mesh>
       <pointLight
         position={[0.75, 0.64, -0.35]}

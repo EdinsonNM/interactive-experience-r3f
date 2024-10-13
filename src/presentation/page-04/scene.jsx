@@ -1,6 +1,7 @@
 import {
   CameraControls,
   Gltf,
+  OrbitControls,
   Scroll,
   ScrollControls,
 } from "@react-three/drei";
@@ -41,7 +42,12 @@ export default function Scene() {
   }, []);
   return (
     <>
-      <CameraControls enableZoom={false} ref={cameraControls} />
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        enableRotate={false}
+        target={[-2, 0, 0]}
+      />
       <ambientLight intensity={3.5} />
 
       <ScrollControls pages={2}>

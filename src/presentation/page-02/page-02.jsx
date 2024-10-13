@@ -26,21 +26,21 @@ export default function Page02() {
       </Canvas>
       <div className="absolute w-full h-full text-cyan-700 flex flex-col justify-center items-center pointer-events-none">
         <div>
-          <h1 className="text-6xl font-bold  whitespace-pre-wrap px-10 max-w-6xl text-center drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl font-bold  whitespace-pre-wrap px-10 max-w-6xl text-center drop-shadow-lg">
             Si pudieran crear tu propio mundo virtual,
             <br />
             ¿Cómo se lo imaginan?
           </h1>
-          <h2 className="text-2xl font-bold text-center text-black mt-10 drop-shadow-lg">
+          <h2 className="text-lg md:text-2xl font-bold text-center text-black mt-10 drop-shadow-lg">
             “Permíteme mostrarte cómo abrir esa puerta
             <br /> con React y ThreeJS." ”
           </h2>
-          <div className="flex gap-4 justify-center text-black mt-10">
+          <div className="flex flex-wrap gap-2 justify-center text-black mt-10">
             {worlds.map((world, index) => (
               <button
                 key={index}
                 onClick={() => setWorld(index)}
-                className="btn btn-neutral pointer-events-auto"
+                className="btn btn-neutral pointer-events-auto btn-sm md:btn-md"
               >
                 Mundo {index + 1}
               </button>

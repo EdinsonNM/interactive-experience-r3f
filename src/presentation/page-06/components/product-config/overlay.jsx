@@ -28,65 +28,62 @@ export function Overlay() {
   };
   return (
     <div className="absolute top-0 left-0 w-full h-full py-10 overflow-hidden">
-      <AnimatePresence className="h-full">
-        {snap.intro ? (
-          <motion.section key="main" {...config} className="h-full">
-            <div className="section--container">
+      {snap.intro ? (
+        <motion.section key="main" {...config} className="h-full">
+          <div className="section--container">
+            <motion.div
+              key="title"
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{
+                type: "spring",
+                damping: 5,
+                stiffness: 40,
+                restDelta: 0.001,
+                duration: 0.3,
+              }}
+            >
+              <h1 className="text-4xl md:text-6xl font-bold  whitespace-pre-wrap px-10  text-start">
+                Configurador de productos
+              </h1>
+            </motion.div>
+            <div className="px-10">
               <motion.div
-                key="title"
-                initial={{ x: 100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
+                key="p"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{
                   type: "spring",
-                  damping: 5,
-                  stiffness: 40,
+                  damping: 7,
+                  stiffness: 30,
                   restDelta: 0.001,
-                  duration: 0.3,
+                  duration: 0.6,
+                  delay: 0.2,
+                  delayChildren: 0.2,
                 }}
               >
-                <h1 className="text-6xl font-bold  whitespace-pre-wrap px-10  text-start">
-                  Configurador de productos
-                </h1>
-              </motion.div>
-              <div className="px-10">
-                <motion.div
-                  key="p"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{
-                    type: "spring",
-                    damping: 7,
-                    stiffness: 30,
-                    restDelta: 0.001,
-                    duration: 0.6,
-                    delay: 0.2,
-                    delayChildren: 0.2,
-                  }}
+                <p className="text-lg md:text-2xl font-bold text-start text-white max-w-4xl  mt-10">
+                  Un configurador de productos es una excelente manera de
+                  mostrar productos y permitir que los clientes los personalicen
+                  mientras visualizan en tiempo real el producto que obtendrán.
+                </p>
+                <button
+                  onClick={() => (state.intro = false)}
+                  type="button"
+                  className="mt-10 focus:outline-none text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-900"
                 >
-                  <p className="text-2xl font-bold text-start text-white max-w-4xl  mt-10">
-                    Un configurador de productos es una excelente manera de
-                    mostrar productos y permitir que los clientes los
-                    personalicen mientras visualizan en tiempo real el producto
-                    que obtendrán.
-                  </p>
-                  <button
-                    onClick={() => (state.intro = false)}
-                    type="button"
-                    className="mt-10 focus:outline-none text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-900"
-                  >
-                    Customizar
-                    <AiOutlineHighlight size="1.3em" className="inline-block" />
-                  </button>
-                </motion.div>
-              </div>
+                  Customizar
+                  <AiOutlineHighlight size="1.3em" className="inline-block" />
+                </button>
+              </motion.div>
             </div>
-          </motion.section>
-        ) : (
-          <motion.section key="custom" {...config}>
-            <Customizer />
-          </motion.section>
-        )}
-      </AnimatePresence>
+          </div>
+        </motion.section>
+      ) : (
+        <motion.section key="custom" {...config}>
+          <Customizer />
+        </motion.section>
+      )}
     </div>
   );
 }

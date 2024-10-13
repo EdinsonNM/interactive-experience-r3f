@@ -9,10 +9,10 @@ export default function Page07() {
         <Scene />
       </Canvas>
       <div className="absolute w-full h-full text-white flex flex-col justify-center items-center pointer-events-none gap-8">
-        <h1 className="text-6xl font-bold  whitespace-pre-wrap px-10 max-w-4xl text-center">
+        <h1 className="text-4xl md:text-6xl font-bold  whitespace-pre-wrap px-10 max-w-4xl text-center">
           Experiencias Educativas
         </h1>
-        <h2 className="text-2xl font-bold text-center text-gray-100 mx-auto max-w-4xl">
+        <h2 className="text-lg md:text-2xl font-bold text-center text-gray-100 mx-auto max-w-4xl">
           “El uso de 3D en la educación está creciendo. Puede usarse para
           visualizar conceptos complejos y hacerlos más fáciles de entender. ”
         </h2>

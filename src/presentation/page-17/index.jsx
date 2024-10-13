@@ -14,10 +14,10 @@ export default function Page17() {
         <Scene />
       </Canvas>
       <div className="absolute w-full h-full text-white flex flex-col justify-start  items-center pointer-events-none gap-8">
-        <h1 className="text-6xl font-bold  whitespace-pre-wrap px-10 max-w-4xl text-center text-cyan-700 mt-10">
+        <h1 className="md:text-6xl text-4xl font-bold  whitespace-pre-wrap px-10 max-w-4xl text-center text-cyan-700 mt-10">
           Material
         </h1>
-        <h2 className="text-2xl font-bold text-center text-gray-100 mx-auto max-w-4xl">
+        <h2 className="md:text-2xl text-lg font-bold text-center text-gray-100 mx-auto max-w-4xl">
           “El material es la piel de tus objetos 3D. Define cómo se ve y se
           comporta el objeto.”
         </h2>

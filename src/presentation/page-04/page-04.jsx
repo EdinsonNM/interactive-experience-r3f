@@ -16,10 +16,10 @@ export default function Page04() {
       </Canvas>
       <div className="absolute w-full h-full text-cyan-700 flex flex-col justify-center items-start pointer-events-none">
         <div className="mx-20 flex flex-col gap-4">
-          <h1 className="text-6xl font-bold  whitespace-pre-wrap px-10 max-w-4xl text-center">
+          <h1 className="text-4xl md:text-6xl font-bold  whitespace-pre-wrap px-10 max-w-4xl text-center">
             ¿Por qué aprender desarrollo web 3D?
           </h1>
-          <h2 className="text-2xl font-bold text-center text-gray-500 max-w-4xl">
+          <h2 className="text-lg md:text-2xl font-bold text-center text-gray-500 max-w-4xl">
             “Aprender desarrollo web 3D es una excelente manera de expandir tus
             habilidades y crear experiencias bellas y únicas. Puedes crear desde
             objetos 3D simples hasta escenas y juegos 3D complejos, el único

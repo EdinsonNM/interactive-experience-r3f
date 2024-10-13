@@ -1,6 +1,7 @@
 import { RigidBody } from "@react-three/rapier";
 import Cube from "./components/cube";
 import Proyector from "../page-03/components/proyector";
+import * as THREE from "three";
 export default function Scene() {
   return (
     <>
@@ -22,7 +23,7 @@ export default function Scene() {
         </mesh>
       </RigidBody>
       <gridHelper args={[50, 50]} position={[0, -0.5, 0]} />
-      <Proyector />
+      <Proyector position={[-0.5, 1, 5]} rotation={[0, -Math.PI, 0]} />
     </>
   );
 }

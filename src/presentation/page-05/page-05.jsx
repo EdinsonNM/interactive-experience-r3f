@@ -8,10 +8,10 @@ export default function Page05() {
   return (
     <>
       <div className="flex flex-col gap-8 items-center justify-center h-screen w-screen text-cyan-700">
-        <h1 className="text-6xl font-bold  whitespace-pre-wrap px-10  text-center">
+        <h1 className="text-4xl md:text-6xl font-bold  whitespace-pre-wrap px-10  text-center">
           Qué podemos hacer con Three JS ?
         </h1>
-        <h2 className="text-2xl font-bold text-center text-gray-500">
+        <h2 className="text-lg md:text-2xl font-bold text-center text-gray-500">
           “Haciendo programación divertida”
         </h2>
       </div>
