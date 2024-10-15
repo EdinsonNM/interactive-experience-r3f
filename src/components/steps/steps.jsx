@@ -38,24 +38,7 @@ export default function Steps({ page, totalPages }) {
   const onSelectPage = (page) => navigate(`/page-${page}`);
   return (
     <>
-      {page >= 1 && (
-        <div className="absolute top-0 left-0 w-[250px] h-full px-5 py-5">
-          <select
-            value={page}
-            className="select select-bordered w-full max-w-xs bg-black/10 text-white"
-            onChange={(e) => onSelectPage(e.target.value)}
-          >
-            <option disabled selected>
-              Ver página
-            </option>
-            {options.map((option, index) => (
-              <option key={index} value={index}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </div>
-      )}
+     
       <div className="flex justify-between fixed bottom-10 w-full px-4">
         <button
           className="btn-circle btn btn-md btn-warning"
