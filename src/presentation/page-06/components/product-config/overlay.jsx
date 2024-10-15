@@ -96,7 +96,7 @@ function Customizer() {
         {snap.colors.map((color) => (
           <div
             key={color}
-            className="w-10 h-10 rounded-full cursor-pointer"
+            className="w-10 h-10 rounded-full cursor-pointer pointer-events-auto"
             style={{ background: color }}
             onClick={() => (state.color = color)}
           ></div>
